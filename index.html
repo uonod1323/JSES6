@@ -4,7 +4,51 @@
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+<button id="버튼">버튼이에요</button>
 <body>
-    
+    <script>
+        var 사람 = {
+            name: '손흥민',
+            sayHi: function(){
+                console.log("안녕 나는 "+this.name);
+            }
+        }
+        //사람.sayHi(); //안녕 나는 손흥민
+        
+
+        var 자료 = { 
+            data : [1,2,3,4,5] 
+        }
+
+        자료.전부더하기 = function(){
+            let i = 0;
+            this.data.forEach((a)=>{
+                i += a;
+            });                
+            return i;
+        }
+
+        console.log(자료.전부더하기());
+
+
+        // 3번 문제 - 첫번째 방법
+        // var afterTime = (버튼내용) => {
+        //     setTimeout(function(){
+        //          console.log(버튼내용) }, 1000)
+        // }
+
+        // document.getElementById('버튼').addEventListener('click', function(){
+        //     afterTime(this.innerHTML);
+        // });
+
+        // 3번 문제 - 두번째 방법
+        document.getElementById('버튼').addEventListener('click', function(){
+             setTimeout(()=>{console.log(this.innerHTML)}, 1000);
+        });
+        
+        
+
+
+    </script>
 </body>
 </html>
