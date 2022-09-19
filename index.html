@@ -5,32 +5,9 @@
     <title>Document</title>
 </head>
 <body>
-    <script> 
-        
-         var obj = {};
-         obj.pants = 100;
-         obj.socks = 100;
-         console.log(obj);
-         var pants = obj.pants
-         var socks =  obj.socks
-         var a = "";
-
-        function 해체분석기(문자들, pants, socks){
-            for(var key in obj){
-                if(obj[key] == 0){
-                    obj[key] = '다팔렸습니다'
-                    a += (`${문자들[0]} ${obj[key]}`); 
-                }else{
-                    a += (`${문자들[1]} ${obj[key]}`); 
-                }
-            }
-            console.log(a);
-        }
-        해체분석기`바지${pants} 양말${obj.socks}`
-
-
-
-
+    <script>
+        var 어레이 = ['hello', 'world'];
+        console.log(...어레이);
     </script>
 </body>
 </html>
