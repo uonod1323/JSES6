@@ -6,8 +6,16 @@
 </head>
 <body>
     <script>
-        var 어레이 = ['hello', 'world'];
-        console.log(...어레이);
+
+        var 글자세기 = function(...a){
+            const result = a.reduce((accu, curr) => { 
+            accu[curr] = (accu[curr] || 0)+1; 
+            console.log (accu);
+            }, {});
+        }
+
+        글자세기('aacbbb');
+
     </script>
 </body>
 </html>
