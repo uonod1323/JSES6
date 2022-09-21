@@ -6,20 +6,15 @@
 </head>
 <body>
     <script>
-        function 글자세기(글){
 
-        var 결과 = {};
-        [...글].forEach(function(a){
-            if(결과[a] > 0){
-                결과[a] ++
-            }else{
-                결과[a] = 1;
-            }
-        }); 
-        return 결과;
+        var 이름1 = { name : '김' };
+
+        function 변경(obj){
+            obj = { name : 'park'}
         }
-        
-        글자세기('aacbbb');
+
+        변경(이름1);
+        console.log(이름1);
 
     </script>
 </body>
