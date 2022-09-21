@@ -6,14 +6,19 @@
 </head>
 <body>
     <script>
+        function 글자세기(글){
 
-        var 글자세기 = function(...a){
-            const result = a.reduce((accu, curr) => { 
-            accu[curr] = (accu[curr] || 0)+1; 
-            console.log (accu);
-            }, {});
+        var 결과 = {};
+        [...글].forEach(function(a){
+            if(결과[a] > 0){
+                결과[a] ++
+            }else{
+                결과[a] = 1;
+            }
+        }); 
+        return 결과;
         }
-
+        
         글자세기('aacbbb');
 
     </script>
