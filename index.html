@@ -7,18 +7,30 @@
 <body>
     <script>
 
-        function ProductConstructor(name, price){
-            this.name = name,
-            this.price = price,
-            this.부가세 = function(){
-                console.log(this.price * 0.1);
+    function 기계(a,b){
+        this.name = a; //this는 새로 생성되는 object를 뜻함
+        this.age  = b;
+        this.sayHi = function(){
+                console.log(`안녕하세요 ${this.name} 입니다`);
             }
-        }
-        
-        var shirts = new ProductConstructor('shirts', '50000');
-        var pants = new ProductConstructor('pants', '60000');
-        pants.부가세();
+       }
 
+       기계.prototype.gender = '남'; //{기계.prototype}.gender = '남'
+
+       var 학생1 = new 기계('kim', 15);
+       var 학생2 = new 기계('park', 15);
+
+       var arr = [1,2,3]; //우리가 array를 만드는 방식
+       var arr = new Array(1,2,3); //자바스크립트가 실제로 array를 만드는 방식
+
+       arr.sort(); // Array로부터 상속을 받아서 만들어진 존재이기에 sort();를 사용하는 것이 가능한거임
+
+       console.log(학생1);
+
+       학생1.sayHi(); //호출
+       학생2.sayHi(); //호출
+
+       var array1 = [231];
     </script>
 
 </body>
