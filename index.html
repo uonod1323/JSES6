@@ -6,25 +6,36 @@
 </head>
 <body>
     <script>
-
-
-        class 할아버지 {
-            constructor(name,name2){
-                this.성 = 'kim';
-                this.이름 = name;
-                this.이름2 = name2;
+        class makeDogs {
+            constructor(type, color){
+                this.type = type;
+                this.color = color;
+            }
+            한살먹기 = function(){
+                if(this.constructor.name == 'makeDogs'){
+                    throw new Error('강아지는 한살먹기 함수를 쓸수 없습니다');
+                }else{
+                    this.age = this.age+1;
+                }
             }
         }
-        var 할아버지1 = new 할아버지('만덕');
 
-        class 아버지 extends 할아버지 {
-            constructor(name,name2){
-                super(name,name2);
-                this.나이 = 50;
+        var 강아지1 = new makeDogs('말티즈', 'white');
+        var 강아지2 = new makeDogs('진돗개', 'brown');
+
+        class makeCats extends makeDogs{
+            constructor(type, color, age){
+                super(type, color, age);
+                this.age = age;
             }
         }
-        var 아버지1 = new 아버지("쌍도","춘섭");
 
+        var 고양이1 = new makeCats('코숏', 'white', 5);
+        var 고양이2 = new makeCats('러시안블루', 'grey', 2);
+
+        강아지1.한살먹기();
+        고양이1.한살먹기();
+        console.log(고양이1);
     </script>
 </body>
 </html>
