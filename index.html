@@ -6,36 +6,51 @@
 </head>
 <body>
     <script>
-        class makeDogs {
-            constructor(type, color){
-                this.type = type;
-                this.color = color;
+
+        class Unit{
+            constructor(){
+                this.atk = 5;
+                this.health = 100;
             }
-            한살먹기 = function(){
-                if(this.constructor.name == 'makeDogs'){
-                    throw new Error('강아지는 한살먹기 함수를 쓸수 없습니다');
-                }else{
-                    this.age = this.age+1;
+            get battlePoint(){
+                    return this.atk + this.health;
+                }
+            set heal(healPoint){
+                this.health = this.health + healPoint;
+                return this.health;
+            }
+        }
+
+        var marine = new Unit();
+        //console.log(marine.battlePoint); //현재 공격력과 체력을 더한 값 출력
+        marine.heal = 50;    //체력을 50 증가
+        //console.log(marine);
+
+
+        var data = {
+                odd : [],
+                even : [],
+                set setter(numArray){
+
+                    for(let i=0; i<numArray.length; i++){
+                        if(numArray[i] % 2 != 0){ //홀수일 경우
+                        data.odd.push(numArray[i]);
+                        }else{
+                        data.even.push(numArray[i]);
+                        }
+                    }
+                },
+                get getter(){
+                    data.odd.sort();
+                    data.even.sort();
+                    console.log(data);
                 }
             }
-        }
 
-        var 강아지1 = new makeDogs('말티즈', 'white');
-        var 강아지2 = new makeDogs('진돗개', 'brown');
+            var numArray = [5,4,3,2,1];
+            data.setter = numArray;
+            data.getter;
 
-        class makeCats extends makeDogs{
-            constructor(type, color, age){
-                super(type, color, age);
-                this.age = age;
-            }
-        }
-
-        var 고양이1 = new makeCats('코숏', 'white', 5);
-        var 고양이2 = new makeCats('러시안블루', 'grey', 2);
-
-        강아지1.한살먹기();
-        고양이1.한살먹기();
-        console.log(고양이1);
     </script>
 </body>
 </html>
