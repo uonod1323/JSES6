@@ -3,39 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
+    <img id="test" src="https://codingapple1.github.io/kona.jpg"> 
     <script>
-        class makeDogs {
-            constructor(type, color){
-                this.type = type;
-                this.color = color;
-            }
-            한살먹기 = function(){
-                if(this.constructor.name == 'makeDogs'){
-                    throw new Error('강아지는 한살먹기 함수를 쓸수 없습니다');
-                }else{
-                    this.age = this.age+1;
-                }
-            }
-        }
 
-        var 강아지1 = new makeDogs('말티즈', 'white');
-        var 강아지2 = new makeDogs('진돗개', 'brown');
+        // var promise = new Promise(function(성공, 실패){
+        //     document.querySelector("#test").addEventListener('load', function(){
+        //         성공();
+        //     });
+        //     document.querySelector("#test").addEventListener('error', function(){
+        //         실패();
+        //     });
+        // });
+        // promise.then(function(){
+        //     console.log('성공');
+        // }).catch(function(){
+        //     console.log('실패');
+        // });
 
-        class makeCats extends makeDogs{
-            constructor(type, color, age){
-                super(type, color, age);
-                this.age = age;
-            }
-        }
 
-        var 고양이1 = new makeCats('코숏', 'white', 5);
-        var 고양이2 = new makeCats('러시안블루', 'grey', 2);
 
-        강아지1.한살먹기();
-        고양이1.한살먹기();
-        console.log(고양이1);
+
+        var promise = new Promise(function(성공){
+            $.get('https://codingapple1.github.io/hello.txt').done((data)=>{
+                성공(data);
+            });
+        });
+        promise.then((data)=>{
+            console.log(data);
+
+            var promise2 = new Promise(function(성공){
+                debugger;
+                $.get('https://codingapple1.github.io/hello2.txt').done(function(data){
+                    성공(data);
+                });
+            });
+
+            return promise2;
+
+        }).then(function(data){
+            console.log(data);
+        })
+
     </script>
 </body>
 </html>
