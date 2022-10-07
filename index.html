@@ -6,47 +6,15 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
-    <img id="test" src="https://codingapple1.github.io/kona.jpg"> 
     <script>
-
-        // var promise = new Promise(function(성공, 실패){
-        //     document.querySelector("#test").addEventListener('load', function(){
-        //         성공();
-        //     });
-        //     document.querySelector("#test").addEventListener('error', function(){
-        //         실패();
-        //     });
-        // });
-        // promise.then(function(){
-        //     console.log('성공');
-        // }).catch(function(){
-        //     console.log('실패');
-        // });
-
-
-
-
-        var promise = new Promise(function(성공){
-            $.get('https://codingapple1.github.io/hello.txt').done((data)=>{
-                성공(data);
-            });
-        });
-        promise.then((data)=>{
-            console.log(data);
-
-            var promise2 = new Promise(function(성공){
-                debugger;
-                $.get('https://codingapple1.github.io/hello2.txt').done(function(data){
-                    성공(data);
-                });
-            });
-
-            return promise2;
-
-        }).then(function(data){
-            console.log(data);
-        })
-
+        let 데이터 = [1,2,3,4,5,6,7,8,9] 
+        var a = 데이터[1];
+        for(var 자료 of 데이터){
+            for(var 자료 of 데이터){
+                console.log(`${a} x ${자료} = ${자료 * a}`);
+            }
+            a++;
+        }
     </script>
 </body>
 </html>
