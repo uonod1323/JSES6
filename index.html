@@ -7,44 +7,14 @@
 </head>
 <body>
     <script>
-        var products = [
-            {
-                name1 : 'chair',
-                price2 : 7000,
-            },
-            {
-                name3 : 'chai22r',
-                price5 : 213000,
-                abcd6 : 2323
-            },
-            {
-                name2 : 'chai22r',
-                pricexs : 213000,
-                dssf2 : 2323
-            },
-            {
-                name3 : 'chai22r',
-                ddfd3 : 213000,
-                oiouiz : 2323,
-                sddgj6 : 2323,
-                zxcxzc3 : 2323
-            }
-        ]; 
+        var 출석부 = ['john', 'tom', 'andy', 'tom'];
 
+        var 출석부2 = new Set(['john', 'tom', 'andy', 'tom']); 
+        //출석부와 똑같은 새로운 출석부를 Set형태로 만듬. 단, 이렇게 하면 Array자료형이 아님
 
-        for(var 반복시행 in products){ // for in 의 반복시행 값은 products 내의 obj 갯수가 된다.
-            var arrlength = Object.keys(products[반복시행]).length; //products의 내부 array요소가 몇개인지 계산합니다.
-            var keyNameArr = Object.keys(products[반복시행]); //products의 내부 array가 가진 key값을 뽑습니다.
-                for(let i=0; i<arrlength; i++){ //products의 내부 array의 갯수만큼 반복문을 돌립니다.
-                    var keyName = keyNameArr[i];
-                    var lastKeyName = keyName.charAt(keyName.length-1) //array가 가진 key의 마지막 글자. 이런 경우에는 숫자가 되겠지?
-                     if(!isNaN(lastKeyName)){ //만약 마지막이름이 숫자면 (isNaN은 '이거 숫자 아님?' 이기 때문에 숫자면 false반환, 문자면true 반환한다. 따라서 !붙여줘야함)
-                         var finalKeyName = keyName.slice(0, -1); //keyName은 원래 있던 이름이고, finalKeyName은 거기서 한글자 뺀 것임
-                         products[반복시행][finalKeyName] = products[반복시행][keyName]; //최초실행시 products[0]["name"]  = products[0]["name1"] 이 된다. 이후 for문을 따라서 증가함
-                         delete products[반복시행][keyName]; //해당 키값은 삭제할것
-                     }
-                }
-            }
+        출석부 = [...출석부2]; //괄호를 제거한 뒤 그 값을 출석부에 새롭게 할당
+        console.log(출석부);
+
     </script>
 </body>
 </html>
